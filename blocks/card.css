@@ -35,6 +35,17 @@
     border-bottom-right-radius: 10px;
 }
 
+.card__title{
+font-family: Inter;
+font-size: 24px;
+font-weight: 900;
+line-height: 29.05px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+
 .card__like-button{
     background: transparent url('../images/like\ button.svg') center no-repeat;
     width: 21px;
