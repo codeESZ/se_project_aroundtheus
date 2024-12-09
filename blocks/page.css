@@ -8,11 +8,23 @@
   max-width: 880px;
   width: 100%;
   position: relative;
-  margin: 0 auto;
 }
 
 .page__content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0 200px;
+}
+
+@media screen and (max-width: 480px) {
+  .page__content {
+    margin: 0 20px;
+  }
+
+  .page__section {
+    max-width: 282px;
+    width: 100%;
+    position: relative;
+  }
 }
