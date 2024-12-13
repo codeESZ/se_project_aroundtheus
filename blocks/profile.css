@@ -21,7 +21,7 @@
   grid-area: button;
   border: 1px solid white;
   cursor: pointer;
-  margin: 15px 165px 9px 0;
+  margin-right: 10px;
 }
 
 .profile__edit-button:hover {
@@ -70,7 +70,7 @@
   border-radius: 50%;
   object-fit: cover;
   background-position: center;
-  margin-right: 24px;
+  margin: 0 24px 0 19px;
 }
 
 @media screen and (max-width: 480px) {

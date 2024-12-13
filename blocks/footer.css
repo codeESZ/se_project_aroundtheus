@@ -3,14 +3,17 @@
   color: rgba(84, 84, 84, 1);
   font-size: 18px;
   font-family: "Inter", sans-serif;
-  padding: 67px 0 60px;
-  line-height: 21.78px;
+  padding: 48px 0 60px;
+  line-height: 21.78;
+  height: 60px;
+  width: 90%;
 }
 
 .footer__copyright {
   position: relative;
-  max-width: 880px;
-  margin: 0px auto;
+  margin: auto;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 @media screen and (max-width: 480px) {
