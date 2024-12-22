@@ -23,4 +23,8 @@
     width: 100%;
     position: relative;
   }
+
+  .page {
+    box-sizing: border-box;
+  }
 }
