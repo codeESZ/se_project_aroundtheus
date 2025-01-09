@@ -31,3 +31,6 @@ This project effectively combines semantic HTML5, modular CSS, and BEM methodolo
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
 Good luck and have fun!
+
+**Video**
+(https://drive.google.com/file/d/1a2xtGP4RW1aSWk2rd8wqleBneWwMvnfK/view?usp=sharing)
