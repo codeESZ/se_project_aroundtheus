@@ -40,7 +40,7 @@
   opacity: 40%;
 }
 .modal__close {
-  background-image: url("../images/Close\ Icon-3.svg");
+  background-image: url("../images/Close\ Icon.png");
   position: absolute;
   bottom: calc(100% + 5px);
   left: calc(100% + 5px);
