@@ -34,11 +34,43 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditclosebutton = document.querySelector(
   "#profile-edit-close-button"
 );
+const profiletitle = document.querySelector(".profile__title");
+const profiledescription = document.querySelector(".profile__description");
+const profiletitelinput = document.querySelector("#profile-title-input");
+const profiledescriptioninput = document.querySelector(
+  "#profile-description-input"
+);
+
+const profileEditform = profileEditModal.querySelector(".modal__form");
+
+/*----------------------------------------------------------------------------------- */
+/*                                  Function                                          */
+/*----------------------------------------------------------------------------------- */
+
+function closepopup() {
+  profileEditModal.classList.remove("modal_opened");
+}
+
+/*----------------------------------------------------------------------------------- */
+/*                                  Event Handlers                                    */
+/*----------------------------------------------------------------------------------- */
+function handleProfileEditSubmit(e) {
+  e.preventDefault();
+  profiletitle.textContent = profiletitelinput.value;
+  profiledescription.textContent = profiledescriptioninput.value;
+  closepopup();
+}
+/*----------------------------------------------------------------------------------- */
+/*                                  EventListener                                     */
+/*----------------------------------------------------------------------------------- */
 
 profileEditButton.addEventListener("click", () => {
+  profiletitelinput.value = profiletitle.textContent;
+  profiledescriptioninput.value = profiledescription.textContent;
+
   profileEditModal.classList.add("modal_opened");
 });
 
-profileEditclosebutton.addEventListener("click", () => {
-  profileEditModal.classList.remove("modal_opened");
-});
+profileEditclosebutton.addEventListener("click", closepopup);
+
+profileEditform.addEventListener("submit", handleProfileEditSubmit);

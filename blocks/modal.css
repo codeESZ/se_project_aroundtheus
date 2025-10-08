@@ -36,9 +36,11 @@
   width: 430px;
   height: 330px;
 }
+
 .modal__close:hover {
   opacity: 40%;
 }
+
 .modal__close {
   background-image: url("../images/Close\ Icon.png");
   position: absolute;
