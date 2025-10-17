@@ -3,6 +3,8 @@
   flex-direction: column;
   list-style: none;
   border-radius: 10px;
+  background-color: white;
+  color: black;
 }
 
 .card__image {
@@ -44,6 +46,7 @@
   height: 18px;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 
 .card__like-button:hover {

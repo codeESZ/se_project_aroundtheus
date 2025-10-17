@@ -25,52 +25,73 @@ const initialCards = [
   },
 ];
 
-console.log(initialCards);
 /*----------------------------------------------------------------------------------- */
 /*                                  Eletents                                          */
 /*----------------------------------------------------------------------------------- */
 const profileEditButton = document.querySelector("#profile__edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const profileEditclosebutton = document.querySelector(
-  "#profile-edit-close-button"
-);
-const profiletitle = document.querySelector(".profile__title");
-const profiledescription = document.querySelector(".profile__description");
-const profiletitelinput = document.querySelector("#profile-title-input");
-const profiledescriptioninput = document.querySelector(
+const profileEditclosebutton = profileEditModal.querySelector(".modal__close");
+const profileTitle = document.querySelector(".profile__title");
+const profileDescription = document.querySelector(".profile__description");
+const profileTitelInput = document.querySelector("#profile-title-input");
+const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
 const profileEditform = profileEditModal.querySelector(".modal__form");
 
+const cardlistEl = document.querySelector(".cards__list");
+
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
 /*----------------------------------------------------------------------------------- */
 /*                                  Function                                          */
 /*----------------------------------------------------------------------------------- */
 
-function closepopup() {
+function closePopup() {
   profileEditModal.classList.remove("modal_opened");
 }
 
+function getCardElement(cardData) {
+  //clone the template element with all its content and store it in a cardElement variable
+  const cardElement = cardTemplate.cloneNode(true);
+  //access the card title and image and store them in variables
+  const cardImageEl = cardElement.querySelector(".card__image");
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  //set the path to the image to the link field of the object
+  cardImageEl.src = cardData.link;
+  //set the image alt text to the name field of the object
+  cardImageEl.alt = cardData.name;
+  //set the card title to the name field of the object, too
+  cardTitleEl.textContent = cardData.name;
+  //return the ready HTML element with the filled-in data
+  return cardElement;
+}
 /*----------------------------------------------------------------------------------- */
 /*                                  Event Handlers                                    */
 /*----------------------------------------------------------------------------------- */
 function handleProfileEditSubmit(e) {
   e.preventDefault();
-  profiletitle.textContent = profiletitelinput.value;
-  profiledescription.textContent = profiledescriptioninput.value;
-  closepopup();
+  profileTitle.textContent = profileTitelInput.value;
+  profileDescription.textContent = profileDescriptionInput.value;
+  closePopup();
 }
 /*----------------------------------------------------------------------------------- */
 /*                                  EventListener                                     */
 /*----------------------------------------------------------------------------------- */
 
 profileEditButton.addEventListener("click", () => {
-  profiletitelinput.value = profiletitle.textContent;
-  profiledescriptioninput.value = profiledescription.textContent;
+  profileTitelInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
 
   profileEditModal.classList.add("modal_opened");
 });
 
-profileEditclosebutton.addEventListener("click", closepopup);
+profileEditclosebutton.addEventListener("click", closePopup);
 
 profileEditform.addEventListener("submit", handleProfileEditSubmit);
+
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardlistEl.prepend(cardElement);
+});
